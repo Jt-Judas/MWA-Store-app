@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
 import { ProductsListComponent } from './products-list.component';
 import { ProductsDetailComponent } from './product-detail.component';
-
+import { ProductService } from './ProductService';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { ProductsDetailComponent } from './product-detail.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
