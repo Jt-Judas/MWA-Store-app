@@ -1,5 +1,7 @@
 import { Product } from "./Product";
 import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class ProductService {
@@ -8,7 +10,7 @@ export class ProductService {
 
     getProducts() {
        this.products  = [new Product("1", "iPhone", 450, "iPhone desc"), new Product('2', 'iPad', 270, 'iPad desc'), new Product('3', 'Apple Tv', 300, 'Apple TV desc')];
-        return this.products;
+        return of(this.products);
     }
 
     deleteProduct(product:Product){

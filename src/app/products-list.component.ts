@@ -26,7 +26,7 @@ export class ProductsListComponent {
   selectedProduct: Product;
 
   constructor(private productService: ProductService) {
-    this.products = productService.getProducts();
+    this.productService.getProducts().subscribe(products=>this.products=products);
   }
 
   delete(product: Product) {
