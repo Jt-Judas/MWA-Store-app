@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from './Product';
 import { ProductService } from './ProductService';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'product-list',
@@ -9,19 +10,20 @@ import { ProductService } from './ProductService';
       <h1>
         {{title}} : Total of {{products.length}} products
       </h1>
-      <ul>
-      <li *ngFor="let product of products" (click)="selectedProduct=product">
-      {{ product.id }}: {{ product.name }}
+     <ul>
+      <li *ngFor="let product of products, let i=index" (click)="selectedProduct=product">
+       {{i+1}}. Product Id: {{ product.id }} ,Name: {{ product.name }}
       </li>
-      </ul>
+     </ul>
     </div> 
-    <product-detail [currentProduct]="selectedProduct" (deleteProduct)="delete($event)"></product-detail>  
+    <product-detail [currentProduct]="selectedProduct" (addToCart)="testToSee($event)" (deleteProduct)="delete($event)"></product-detail>  
   `,
-  styles: ['div{border:1px solid red;align-text:center;background-color:white;margin:10px}']
+  styles: ['div{border:1px solid red;text-align:center;background-color:white;margin:10px}','ul{text-align:center}'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ProductsListComponent {
   title = 'Product List';
-  products: Product[];
+  products:Product[];
 
   selectedProduct: Product;
 
@@ -31,5 +33,9 @@ export class ProductsListComponent {
 
   delete(product: Product) {
     this.productService.deleteProduct(product);
+  }
+
+  testToSee(product:Product){
+    console.log("Me too, I am here");
   }
 }

@@ -2,7 +2,7 @@ import { Product } from "./Product";
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs/Rx';
 
-@Injectable()
+//@Injectable()
 export class ProductService {
   
     products: Product[];

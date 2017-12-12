@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
       <product-list></product-list> 
     </div>  
   `,
-  styles: ['div{border:3px solid red;text-align:center;background-color:blue}','hi{color:white}']
+  styles: ['div{border:3px solid red;text-align:center;background-color:blue}','hi{color:white}','div product-list{width:100px;align:left}']
 })
 export class AppComponent {
   title = 'Welcome to App Store';
