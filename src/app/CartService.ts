@@ -23,14 +23,18 @@ export class CartService {
         this.cart.splice(this.cart.indexOf(item), 1);
     }
 
-    getAmount() {
+    // getAmount() {
 
-        let amount: number = 0;
-        this.cart.forEach(function (d) {
-            amount += (d.amount*d.quantity);
-        });
-        this.totalAmount = amount
-        return amount;
+    //     let amount: number = 0;
+    //     this.cart.forEach(function (d) {
+    //         amount += (d.amount*d.quantity);
+    //     });
+    //     this.totalAmount = amount
+    //     return amount;
+    // }
+
+    getAmount() {
+        return this.cart.map(cart =>cart.amount*cart.quantity).reduce((a, b) => a + b,0);
     }
 
     getCartIems() {

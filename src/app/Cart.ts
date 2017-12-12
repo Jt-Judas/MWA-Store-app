@@ -23,6 +23,6 @@ export class Cart {
     }
 
     getAmount() {
-        return this.cart.map(item => item.amount).reduce((a, b) => a + b);
+        return this.cart.map(cart => cart.amount).reduce((a, b) => a + b);
     }
 }
