@@ -21,11 +21,11 @@ import { Product } from './Product';
         <tr *ngFor='let item of cartItems | async'>
           <td>{{item.name}}</td>
           <td>{{item.quantity}}</td>
-          <td>$ {{item.quantity | cartpipe:item.amount}}</td>
+          <td>{{item.quantity | cartpipe:item.amount | currency:'USD'}}</td>
         </tr>
       </table>
       <h3>
-        Total Amount:$ {{getTotal()}}
+        Total Amount: {{getTotal() | currency:'USD'}}
       </h3>
       <br>
       <input type='button' value='Delete product' style="margin:10px" (click)="remove()">
