@@ -6,8 +6,7 @@ import { CartService } from './CartService'
 
 @Component({
   selector: 'product-detail',
-  template: `
-    <cart (addToCart)="addItemToCart($event)" (removeItem)="testRemove($event)"></cart>  
+  template: ` 
     <div *ngIf="currentProduct">
       <h3>
         {{title}}
@@ -24,7 +23,8 @@ import { CartService } from './CartService'
       <br>
       <input type='button' value='Delete product' style="margin:10px" (click)="delete()">
       <input type='button' value='Add to cart' style="margin:10px" (click)="addItemToCart()">
-    </div>    
+    </div>  
+    <cart (addToCart)="addItemToCart($event)" (removeItem)="testRemove($event)"></cart>   
   `,
   styles: ['div{border:1px solid red;text-align:center;background-color:white;margin:20px}']
 })
