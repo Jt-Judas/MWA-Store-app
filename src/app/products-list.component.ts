@@ -29,7 +29,7 @@ import { ViewEncapsulation } from '@angular/core';
     </div> 
     <product-detail [currentProduct]="selectedProduct" (addToCart)="testToSee($event)" (deleteProduct)="delete($event)"></product-detail>  
   `,
-  styles: ['div{border:1px solid red;text-align:center;background-color:white;margin:10px;padding:10px}','ul{text-align:center}','table{text-align:center;margin:auto;display: inline-block;}'],
+  styles: ['div{border:1px solid red;text-align:center;background-color:white;margin:10px;padding:10px}','ul{text-align:center}','table{text-align:center;margin:auto;display: inline-block;}','product-form{background-color:grey}'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ProductsListComponent {

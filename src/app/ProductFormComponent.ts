@@ -5,7 +5,7 @@ import { ProductService } from './ProductService';
 @Component({
     selector: 'product-form',
     templateUrl: './templates/product-form.component.html',
-    styles: []
+    styles: ['form{background-color:grey}']
 })
 export class ProductFormComponent {
 
