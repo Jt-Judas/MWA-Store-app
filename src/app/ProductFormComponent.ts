@@ -19,11 +19,12 @@ export class ProductFormComponent {
         description: new FormControl()
     });
 
-    get name(){
-    return this.ProductForm.get('name');
+    get name() {
+        return this.ProductForm.get('name');
     }
 
     submit() {
-                this.productService.addProduct(this.ProductForm.get('name').value, this.ProductForm.get('price').value, this.ProductForm.get('description').value);
+        if (this.ProductForm.valid)
+            this.productService.addProduct(this.ProductForm.get('name').value, this.ProductForm.get('price').value, this.ProductForm.get('description').value);
     }
 }

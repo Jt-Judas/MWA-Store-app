@@ -10,7 +10,6 @@ export class ProductValidators {
     }
 
     static isUniqueByObservable(c: AbstractControl): Observable<ValidationErrors | null> {
-        console.log(c.value);
         return (c.value as string) === 'P123' ?  Observable.of({ 'isUnique': false }) : Observable.of(null);
     }
 
