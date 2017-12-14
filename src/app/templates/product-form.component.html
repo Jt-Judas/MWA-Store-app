@@ -6,6 +6,14 @@
         <input formControlName="price" type="text" id="price" class="form-control">
         <label for="description">Description: </label>
         <input formControlName="description" type="text" id="description" class="form-control">
+        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                        <div *ngIf="name.errors.required" class="alert alert-danger">
+                         Name required
+                        </div>
+                        <div *ngIf="!name.errors?.isUnique" class="alert alert-danger">
+                            Name should be unique
+                         </div>
+        </div>
         <button class="btn btn-primary" type="submit" (click)='submit()' >Add</button>
     </div>
 </form>
