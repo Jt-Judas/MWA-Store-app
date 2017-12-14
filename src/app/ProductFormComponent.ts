@@ -13,18 +13,18 @@ export class ProductFormComponent {
 
     constructor(private productService: ProductService) { }
 
-    ProductForm = new FormGroup({
+    productForm = new FormGroup({
         name: new FormControl('', [Validators.required], [ProductValidators.isUniqueByObservable]),
         price: new FormControl(),
         description: new FormControl()
     });
 
     get name() {
-        return this.ProductForm.get('name');
+        return this.productForm.get('name');
     }
 
     submit() {
-        if (this.ProductForm.valid)
-            this.productService.addProduct(this.ProductForm.get('name').value, this.ProductForm.get('price').value, this.ProductForm.get('description').value);
+        if (this.productForm.valid)
+            this.productService.addProduct(this.productForm.get('name').value, this.productForm.get('price').value, this.productForm.get('description').value);
     }
 }
